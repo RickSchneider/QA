@@ -49,6 +49,7 @@ Thumbs.db
 *.wmv
 
 # cypress
+cypress/downloads
 cypress/screenshots
 cypress/videos
 cypress/reports
