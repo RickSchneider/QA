@@ -12,6 +12,8 @@ describe('Carrinho', () => {
     // Act
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
 
+    cy.screenshot('produto adicionado')
+
     // Assert
     cy.get('.shopping_cart_badge')
       .should('be.visible')
@@ -39,6 +41,8 @@ describe('Carrinho', () => {
 
     // Act
     cy.get('[data-test="remove-sauce-labs-backpack"]').click()
+
+    cy.screenshot('produto removido')
 
     // Assert
     cy.get('.shopping_cart_badge')

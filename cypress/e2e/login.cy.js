@@ -10,6 +10,8 @@ describe('Login', () => {
 
     cy.get('[data-test="login-button"]').click()
 
+    cy.screenshot('login')
+
     // Assert
     cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
   })
@@ -24,6 +26,8 @@ describe('Login', () => {
     cy.get('[data-test=password]').type('senha')
 
     cy.get('[data-test="login-button"]').click()
+
+    cy.screenshot('erro credenciais inválidas')
 
     // Assert
     cy.get('[data-test="error"]')
