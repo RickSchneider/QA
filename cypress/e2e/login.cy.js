@@ -10,10 +10,10 @@ describe('Login', () => {
 
     cy.get('[data-test="login-button"]').click()
 
-    cy.screenshot('login')
-
     // Assert
     cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
+
+    cy.screenshot('login')
   })
 
   it('Realizar login informando credenciais inválidas', () => {
@@ -27,8 +27,6 @@ describe('Login', () => {
 
     cy.get('[data-test="login-button"]').click()
 
-    cy.screenshot('erro credenciais inválidas')
-
     // Assert
     cy.get('[data-test="error"]')
       .should(
@@ -37,5 +35,7 @@ describe('Login', () => {
       )
 
     cy.url().should('eq', 'https://www.saucedemo.com/')
+
+    cy.screenshot('erro credenciais inválidas')
   })
 })
