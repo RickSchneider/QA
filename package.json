@@ -1,0 +1,31 @@
+{
+  "name": "qa-cypress-tests",
+  "version": "1.0.0",
+  "description": "QA Testing Repository with Cypress E2E tests for SwagLabs application",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run",
+    "test:headed": "cypress run --headed",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox"
+  },
+  "keywords": [
+    "qa",
+    "testing",
+    "cypress",
+    "e2e",
+    "automation",
+    "swaglabs"
+  ],
+  "author": "QA Team",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RickSchneider/QA.git"
+  }
+}
