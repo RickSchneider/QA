@@ -1,12 +1,12 @@
+import { baseInfo as bi } from "../../fixtures/baseInfo";
 import { elements as el } from "./elements";
 class Inventory {
   validarAcessoPagina() {
-    cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
-
+    cy.url().should("eq", bi.urlInventory);
     cy.screenshot("Acesso a página de inventário");
   }
-  adicionarProduto(itenName) {
-    cy.get(el.addToCart(itenName)).click();
+  adicionarProduto(itemName) {
+    cy.get(el.addToCart(itemName)).click();
   }
 }
 

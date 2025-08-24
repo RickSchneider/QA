@@ -1,5 +1,5 @@
 export const elements = {
-  addToCart: (itenName) => "[data-test=add-to-cart-${transform(itenName)}]",
+  addToCart: (itemName) => '[data-test="add-to-cart-${transform(itemName)}"]',
 };
 
 function transform(texto) {
