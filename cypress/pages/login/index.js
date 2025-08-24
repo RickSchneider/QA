@@ -1,5 +1,6 @@
 import { baseInfo as bi } from "../../fixtures/baseInfo";
 import { elements as el } from "./elements";
+
 class Login {
   visitarPagina() {
     cy.visit(bi.urlLogin);
