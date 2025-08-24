@@ -1,24 +1,27 @@
 const { defineConfig } = require("cypress");
 
+const dotenv = require("dotenv");
 module.exports = defineConfig({
-  reporter: 'cypress-multi-reporters',
+  reporter: "cypress-multi-reporters",
   reporterOptions: {
-    reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
+    reporterEnabled: "cypress-mochawesome-reporter, mocha-junit-reporter",
     mochaJunitReporterReporterOptions: {
-      mochaFile: 'cypress/reports/junit/results-[hash].xml'
+      mochaFile: "cypress/reports/junit/results-[hash].xml",
     },
     cypressMochawesomeReporterReporterOptions: {
       charts: true,
-      reportPageTitle: 'Relatório de testes',
+      reportPageTitle: "Relatório de testes",
       embeddedScreenshots: true,
       inlineAssets: true,
-      saveAllAttempts: false
-    }
+      saveAllAttempts: false,
+    },
   },
   chromeWebSecurity: false,
+
   e2e: {
+    baseUrl: "https://www.saucedemo.com/",
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on)
+      require("cypress-mochawesome-reporter/plugin")(on);
       // implement node event listeners here
     },
   },
