@@ -1,34 +1,12 @@
-name: Cypress End-to-End Tests
-on:
-  push:
-    branches:
-      - main
-      - dev
-  pull_request:
-
+name: End-to-end tests
+on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
-
     steps:
-      # 1️⃣ Checkout do repositório
       - name: Checkout
         uses: actions/checkout@v4
-
-      # 2️⃣ Configura Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-
-      # 3️⃣ Instala dependências do npm
-      - name: Install dependencies
-        run: npm ci
-
-      # 4️⃣ Instala dotenv-cli para carregar .env.dev
-      - name: Install dotenv-cli
-        run: npm install -g dotenv-cli
-
-      # 5️⃣ Roda os testes carregando o .env.dev
-      - name: Run Cypress Tests
-        run: npx dotenv -e .env.dev -- npm run cy:open:dev
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: cypress open --config-file config-dev.js --browser chrome
+        uses: cypress-io/github-action@v6
