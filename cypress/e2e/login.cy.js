@@ -4,6 +4,8 @@ describe("Login", () => {
   beforeEach(() => {
     // Arrange
     login.visitarPagina();
+  });
+  it("Login com credenciais certas", () => {
     login.loginValido();
     inventory.validarAcessoPagina();
   });
@@ -11,8 +13,6 @@ describe("Login", () => {
   it("Realizar login informando credenciais inválidas", () => {
     // Act
     login.credenciaisInvalidasPreencher();
-
-    // Assert
     login.validarErroLogin();
   });
   it("Realizar login com usuário certo e senha errada", () => {

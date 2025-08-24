@@ -6,7 +6,11 @@ class Header {
       .and("have.text", quantidade.toString());
   }
   goToCart() {
-    cy.get(el.cartContainer).click();
+    cy.get(el.cartBadge).click();
+  }
+  ValidarCarrinhoSemItem() {
+    cy.get(el.cartBadge).should("not.exist");
+    cy.screenshot("produto removido");
   }
 }
 export default new Header();

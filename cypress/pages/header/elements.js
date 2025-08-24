@@ -1,4 +1,4 @@
 export const elements = {
-  cartBadge: '["data-test="shopping-cart-badge"]',
+  cartBadge: ".shopping_cart_badge",
   cartContainer: '[data-test="shopping-cart-link"]',
 };
