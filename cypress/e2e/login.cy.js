@@ -1,5 +1,5 @@
 import Login from "../pages/login";
-import inventory from "../inventory";
+import inventory from "./inventory";
 describe("Login", () => {
   beforeEach(() => {
     // Arrange
@@ -8,7 +8,7 @@ describe("Login", () => {
 
   it("Realizar login com sucesso", () => {
     // Act
-    Login.credenciaisValidasPreencher();
+    Login.u();
 
     // Assert
     inventory.validarAcessoPagina();
